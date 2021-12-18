@@ -50,6 +50,7 @@ async function
     forma.terminarSesión.
       addEventListener(
         "click", terminaSesión);
+    window.uidPersonal = firebase.auth().currentUser.uid
   } else {
     // No ha iniciado sesión.
     iniciaSesión();
