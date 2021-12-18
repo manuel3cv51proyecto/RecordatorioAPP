@@ -30,7 +30,7 @@ class MiNav extends HTMLElement {
     if (usu && usu.email) {
       let html =`<ul>
       <li>
-        <a href="alumnos.html">
+        <a href="recordatorios.html">
           Recordatorio</a>
       </li>
     </ul>`;
