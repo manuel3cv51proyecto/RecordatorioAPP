@@ -10,27 +10,27 @@ import {
 /** @type {HTMLUListElement} */
 const lista = document.
   querySelector("#lista");
-const daoAlumno =
+const fRecordaotrio =
   getFirestore().
-    collection("Alumno");
+    collection("Usuario").doc(uidPersonal).collection("Recordatorio");
 
 getAuth().
   onAuthStateChanged(
-    protege, muestraError);
+    enviar, muestraError);
 
 /** @param {import(
     "../lib/tiposFire.js").User}
     usuario */
-async function protege(usuario) {
-  if (tieneRol(usuario,
-    ["Administrador"])) {
+async function enviar() {
+
+  
     consulta();
-  }
+  
 }
 
 function consulta() {
-  daoAlumno.
-    orderBy("nombre")
+  fRecordaotrio.
+    orderBy("titulo")
     .onSnapshot(
       htmlLista, errConsulta);
 }
@@ -47,8 +47,8 @@ function htmlLista(snap) {
   } else {
     html += /* html */
       `<li class="vacio">
-        -- No hay alumnos
-        registrados. --
+        -- No hay recordatorios
+        anotados. --
       </li>`;
   }
   lista.innerHTML = html;
@@ -63,8 +63,8 @@ function htmlFila(doc) {
    * @type {import("./tipos.js").
                   Alumno} */
   const data = doc.data();
-  const matricula = cod(data.matricula);
-  const nombre = cod(data.nombre);
+  const titulo = cod(data.titulo);
+  const descripcion = cod(data.descripcion);
   var fsf= cod(data.fecha);
   var fecha = new Date(fsf);
   var espacio="[   -   ]";
@@ -76,9 +76,17 @@ function htmlFila(doc) {
     `<li>
       <a class="fila" href=
   "alumno.html?${parámetros}">
-        <strong class="primario">
-          ${matricula} ${nombre} ${dformat}
-        </strong>
+          <span class="texto">
+          <strong
+              class="primario">
+            ${titulo}
+          </strong>
+          <span
+              class="secundario">
+            ${descripcion}<br>
+            ${dformat}
+          </span>
+        </span>
       </a>
      
     </li>`);
