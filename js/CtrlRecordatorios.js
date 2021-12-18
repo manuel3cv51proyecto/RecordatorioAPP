@@ -29,8 +29,7 @@ async function enviar() {
 }
 
 function consulta() {
-  fRecordaotrio.
-    orderBy("titulo")
+  fRecordaotrio
     .onSnapshot(
       htmlLista, errConsulta);
 }
