@@ -10,7 +10,11 @@ import {
 /** @type {HTMLUListElement} */
 const lista = document.
   querySelector("#lista");
-const uidPersonal = firebase.auth().currentUser.uid
+firebase.auth().onAuthStateChanged(function(user){
+  if(user){
+    uidPersonal = user.uid;
+  }
+});
 const fRecordaotrio =
   getFirestore().
     collection("Usuario").doc(uidPersonal).collection("Recordatorio");
