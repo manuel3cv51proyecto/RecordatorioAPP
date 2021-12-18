@@ -4,8 +4,8 @@
  */
 
 /**
- * @typedef {Object} Alumno
- * @property {string} nombre
+ * @typedef {Object} Recordatorio
+ * @property {string} fecha
  */
 
 /**
