@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width,
+       initial-scale=1.0">
+  <title>Alumno</title>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
+    </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js">
+    </script>
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js">
+    </script>
+  <script src="js/init.js">
+  </script>
+  <script type="module"
+    src="cmp/mi-nav.js">
+    </script>
+  <script type="module"
+    src="cmp/mi-footer.js">
+    </script>
+  <link rel="stylesheet"
+    href="css/estilos.css">
+</head>
+<body>
+  <form name="forma">
+    <mi-nav></mi-nav>
+    <header>
+      <h1>Alumno</h1>
+      <div class="herramientas">
+        <a href="recordatorios.html">
+          Cancelar</a>
+        <button>Guardar</button>
+        <button name="eliminar"
+          type="button">
+          Eliminar
+        </button>
+      </div>
+    </header>
+    <p>
+      <label>
+        Titulo
+        <input name="titulo"
+          type="text" required>
+      </label>
+    </p>
+    <p>
+      <label>
+        Descripcion
+        <textarea name="recodatorio" required placeholder="Descripcion de la anotacion o recordatorio">
+
+        </textarea>
+      </label>
+    </p>
+    <p>
+      <label>
+        Fecha de entrega
+        <input name="fecha"
+          type="date" required>
+      </label>
+    </p>
+    <mi-footer></mi-footer>
+  </form>
+  <script type="module"
+    src="js/CtrlRecordatorio.js">
+    </script>
+</body>
+</html>
+
